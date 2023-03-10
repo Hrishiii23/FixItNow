@@ -64,4 +64,8 @@ public class ServiceManService {
 		return null;
 	}
 
+	public void deleteById(int serviceManId) {
+		serviceManRepository.deleteById(serviceManId);
+	}
+
 }

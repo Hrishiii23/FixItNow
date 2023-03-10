@@ -10,6 +10,11 @@ import CustomerBookings from "./pages/CustomerBookings"
 import CustomerProfile from "./pages/CustomerProfile"
 import ServiceManBookings from "./pages/ServiceManBookings"
 import ServiceManProfile from "./pages/ServiceManProfile"
+import AdminHome from "./pages/AdminHome"
+import UserManagement from "./pages/UserManagement"
+import ServiceManManagement from "./pages/ServiceManManagement"
+import ServiceDetailsManagement from "./pages/ServiceDetailsManagement"
+import AddressManagement from "./pages/AddressManagement"
 
 function App() {
   return (
@@ -26,6 +31,18 @@ function App() {
           <Route path="/serviceManHome" element={<ServiceManHome />} />
           <Route path="/serviceManBookings" element={<ServiceManBookings />} />
           <Route path="/serviceManProfile" element={<ServiceManProfile />} />
+
+          <Route path="/adminHome" element={<AdminHome />} />
+          <Route path="/userManagement" element={<UserManagement />} />
+          <Route path="/addressManagement" element={<AddressManagement />} />
+          <Route
+            path="/serviceManManagement"
+            element={<ServiceManManagement />}
+          />
+          <Route
+            path="/serviceDetailsManagement"
+            element={<ServiceDetailsManagement />}
+          />
         </Routes>
       </BrowserRouter>
       <ToastContainer

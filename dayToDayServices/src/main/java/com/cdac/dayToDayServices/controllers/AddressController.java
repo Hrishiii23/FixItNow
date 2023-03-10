@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,5 +42,21 @@ public class AddressController {
 			return Response.error("No address found for the user");
 		else
 			return Response.success(addresses);
+	}
+	
+	@GetMapping("/getAll")
+	public ResponseEntity getAll() {
+		List<Address> list = service.getAllAddresses();
+		if (list.isEmpty())
+			return Response.error("No Addresses available");
+		else {
+			return Response.success(list);
+		}
+	}
+	
+	@DeleteMapping("/delete/{addressId}")
+	public ResponseEntity deleteUser(@PathVariable int addressId) {
+		service.deleteById(addressId);
+		return Response.success("Delete address called successfully !!!");
 	}
 }

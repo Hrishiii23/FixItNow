@@ -61,20 +61,20 @@ const Signup = () => {
           <style
             dangerouslySetInnerHTML={{
               __html:
-                "#intro {background-image: url(Photo2.jpg);height: 110vh;background-repeat: no-repeat;background-size: cover;}/* Height for devices larger than 576px */@media (min-width: 992px) {#intro {margin-top: -58.59px;}}.navbar .nav-link {color: #fff !important;}",
+                "#intro {background-image: url(Photo2.jpg);height: 105vh;background-repeat: no-repeat;background-size: cover;}/* Height for devices larger than 576px */@media (min-width: 992px) {#intro {margin-top: -58.59px;}}.navbar .nav-link {color: #fff !important;}",
             }}
           />
           {/* Background image */}
           <div id="intro" className="bg-image shadow-2-strong">
             <div
               className="mask d-flex align-items-center h-100"
-              style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
+              style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
             >
               <div className="container">
                 <div className="row justify-content-center">
                   <div className="col-xl-5 col-md-8">
-                    <div className="bg-white  rounded-5 shadow-5-strong p-5">
-                      <h4 style={{ textAlign: "center" }}>Sign Up</h4>
+                    <div className="bg-white rounded-3 shadow-5-strong p-5">
+                      <h4 className="text-center text-primary">Sign Up</h4>
                       <div className="row text-center">
                         <div className="col form-check">
                           <label>Customer :</label>
@@ -102,7 +102,7 @@ const Signup = () => {
                         </div>
                       </div>
 
-                      <div className="mb-3">
+                      <div className="mb-2">
                         <label className="label-control">Firstname</label>
                         <input
                           id="firstName"
@@ -115,7 +115,7 @@ const Signup = () => {
                         />
                       </div>
 
-                      <div className="mb-3">
+                      <div className="mb-2">
                         <label className="label-control">Lastname</label>
                         <input
                           id="lastName"
@@ -128,7 +128,7 @@ const Signup = () => {
                         />
                       </div>
 
-                      <div className="mb-3">
+                      <div className="mb-2">
                         <label className="label-control">Email</label>
                         <input
                           id="email"
@@ -141,11 +141,11 @@ const Signup = () => {
                         />
                       </div>
 
-                      <div className="mb-3">
+                      <div className="mb-2">
                         <label className="label-control">Password</label>
                         <input
                           id="password"
-                          type="text"
+                          type="password"
                           className="form-control"
                           value={password}
                           onChange={(e) => {
@@ -154,13 +154,13 @@ const Signup = () => {
                         />
                       </div>
 
-                      <div className="mb-3">
+                      <div className="mb-2">
                         <label className="label-control">
                           Confirm Password
                         </label>
                         <input
                           id="confirmPassword"
-                          type="text"
+                          type="password"
                           className="form-control"
                           value={confirmPassword}
                           onChange={(e) => {
@@ -170,16 +170,15 @@ const Signup = () => {
                         />
                       </div>
                       <p id="passwordCheck"></p>
-                      <div>
-                        {" "}
-                        Already Signed up? <Link to={"/"}>
-                          Signin here
-                        </Link>{" "}
+                      <div className="mb-1">
+                        {"Already Signed up? "}
+                        <Link to={"/"}>Signin</Link>
+                        {" here"}
                       </div>
                       <div className="row text-center">
                         <div className="col">
                           <button
-                            className="btn btn-primary"
+                            className="btn btn-primary shadow"
                             onClick={signupUser}
                           >
                             Signup
@@ -187,7 +186,7 @@ const Signup = () => {
                         </div>
                         <div className="col">
                           <button
-                            className="btn btn-danger"
+                            className="btn btn-danger shadow"
                             onClick={clearInput}
                           >
                             Clear
@@ -204,14 +203,11 @@ const Signup = () => {
         </header>
         {/*Main Navigation*/}
         {/*Footer*/}
-        <div className="navbar fixed-bottom">
+        <div className="navbar navbar-dark bg-black fixed-bottom">
           {/* Copyright */}
-          <div
-            className="mx-auto text-center p-3"
-            style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
-          >
+          <div className="mx-auto text-white text-center">
             © 2023 Copyright:
-            <Link className="text-dark" to="/">
+            <Link className="text-white" to="/">
               Day To Day Services
             </Link>
           </div>

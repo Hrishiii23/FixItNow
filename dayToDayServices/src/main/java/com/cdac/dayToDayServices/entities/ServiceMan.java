@@ -2,7 +2,6 @@ package com.cdac.dayToDayServices.entities;
 
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,7 +20,7 @@ public class ServiceMan {
 	private String title;
 	private String description;
 	private double avgCost;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "user_id", referencedColumnName = "id",nullable = false)
 	private User user;
 	@OneToMany(mappedBy = "serviceMan")

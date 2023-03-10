@@ -47,27 +47,32 @@ function CustomerProfile() {
                   className="custom-select mb-2 m-1"
                   style={{ width: 200 }}
                 >
-                  {addresses.map((address) => {
-                    return (
-                      <>
-                        <option key={address.id} value={address.id}>
-                          {address.recipientsName}
-                        </option>
-                        <option disabled={true}>
-                          {address.recipientsName}
-                        </option>
-                        <option disabled={true}>
-                          {address.recipientsPhone}
-                        </option>
-                        <option disabled={true}>{address.addressLine1}</option>
-                        <option disabled={true}>{address.addressLine2}</option>
-                        <option disabled={true}>{address.city}</option>
-                        <option disabled={true}>{address.postalCode}</option>
-                        <option disabled={true}>{address.state}</option>
-                        <option disabled={true}>{address.country}</option>
-                      </>
-                    )
-                  })}
+                  {addresses &&
+                    addresses.map((address) => {
+                      return (
+                        <>
+                          <option key={address.id} value={address.id}>
+                            {address.recipientsName}
+                          </option>
+                          <option disabled={true}>
+                            {address.recipientsName}
+                          </option>
+                          <option disabled={true}>
+                            {address.recipientsPhone}
+                          </option>
+                          <option disabled={true}>
+                            {address.addressLine1}
+                          </option>
+                          <option disabled={true}>
+                            {address.addressLine2}
+                          </option>
+                          <option disabled={true}>{address.city}</option>
+                          <option disabled={true}>{address.postalCode}</option>
+                          <option disabled={true}>{address.state}</option>
+                          <option disabled={true}>{address.country}</option>
+                        </>
+                      )
+                    })}
                 </select>
                 <div className="text-center">
                   <button

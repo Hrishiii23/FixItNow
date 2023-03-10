@@ -4,7 +4,6 @@ import java.util.Date;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,13 +25,13 @@ public class ServiceDetails {
 	private String paymentStatus;
 	private String status;
 	private boolean isSatisfied;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "customer_id", referencedColumnName = "id")
 	private User customer;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "customer_address_id", referencedColumnName = "id")
 	private Address address;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "service_man_id", referencedColumnName = "id")
 	private ServiceMan serviceMan;
 	@Column(nullable = false, updatable = false)

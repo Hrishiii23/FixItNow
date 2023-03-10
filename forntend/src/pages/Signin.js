@@ -24,6 +24,7 @@ const Signin = () => {
         if (result["data"].role === "CUSTOMER") navigate("/customerHome")
         else if (result["data"].role === "SERVICE_MAN")
           navigate("/serviceManHome")
+        else if (result["data"].role === "ADMIN") navigate("/adminHome")
       } else {
         toast.error(result["error"])
       }
@@ -35,21 +36,21 @@ const Signin = () => {
       <style
         dangerouslySetInnerHTML={{
           __html:
-            "#intro {background-image: url(Photo2.jpg);height: 100vh;background-repeat: no-repeat;background-size: cover;}/* Height for devices larger than 576px */@media (min-width: 992px) {#intro {margin-top: -58.59px;}}.navbar .nav-link {color: #fff !important;}",
+            "#intro {background-image: url(Photo2.jpg);height: 105vh;background-repeat: no-repeat;background-size: cover;}/* Height for devices larger than 576px */@media (min-width: 992px) {#intro {margin-top: -58.59px;}}.navbar .nav-link {color: #fff !important;}",
         }}
       />
       <div id="intro" className="bg-image shadow-2-strong">
         <div
           className="mask d-flex align-items-center h-100"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-xl-5 col-md-8">
-                <div className="mx-auto bg-white  rounded-2 shadow-5-strong p-5">
+                <div className="mx-auto bg-white rounded-2 shadow-5-strong p-5">
                   {/* Email input */}
                   <div className="form-outline mb-4">
-                    <h4 style={{ textAlign: "center" }}>Sign In</h4>
+                    <h4 className="text-center text-primary">Sign In</h4>
                     <label className="form-label">Email address</label>
                     <input
                       type="email"
@@ -82,7 +83,7 @@ const Signin = () => {
                   <div className="row text-center">
                     <div className="col">
                       <button
-                        className="btn btn-primary btn-block"
+                        className="btn btn-primary shadow"
                         onClick={signinUser}
                       >
                         Signin
@@ -90,7 +91,7 @@ const Signin = () => {
                     </div>
                     <div className="col">
                       <button
-                        className="btn btn-danger"
+                        className="btn btn-danger shadow"
                         onClick={() => {
                           setEmail("")
                           setPassword("")
@@ -107,14 +108,11 @@ const Signin = () => {
         </div>
       </div>
       {/*Footer*/}
-      <div className="navbar fixed-bottom">
+      <div className="navbar navbar-dark bg-black fixed-bottom">
         {/* Copyright */}
-        <div
-          className="mx-auto text-center p-3"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
-        >
+        <div className="mx-auto text-white text-center">
           © 2023 Copyright:
-          <Link className="text-dark" to="/">
+          <Link className="text-white" to="/">
             Day To Day Services
           </Link>
         </div>

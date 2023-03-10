@@ -35,7 +35,7 @@ function AddServiceMan() {
       <style
         dangerouslySetInnerHTML={{
           __html:
-            "#intro {background-image: url(Photo2.jpg);height: 100vh;background-repeat: no-repeat;background-size: cover;}/* Height for devices larger than 576px */@media (min-width: 992px) {#intro {margin-top: -58.59px;}}.navbar .nav-link {color: #fff !important;}",
+            "#intro {background-image: url(Photo2.jpg);height: 105vh;background-repeat: no-repeat;background-size: cover;}/* Height for devices larger than 576px */@media (min-width: 992px) {#intro {margin-top: -58.59px;}}.navbar .nav-link {color: #fff !important;}",
         }}
       />
       <div id="intro" className="bg-image shadow-2-strong">
@@ -106,15 +106,12 @@ function AddServiceMan() {
         </div>
       </div>
       {/*Footer*/}
-      <div className="navbar fixed-bottom">
+      <div className="navbar navbar-dark bg-black fixed-bottom">
         {/* Copyright */}
-        <div
-          className="mx-auto text-center p-3"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
-        >
+        <div className="mx-auto text-white text-center">
           © 2023 Copyright:
-          <Link className="text-dark" to="/">
-            Fix It Now
+          <Link className="text-white" to="/">
+            Day To Day Services
           </Link>
         </div>
         {/* Copyright */}

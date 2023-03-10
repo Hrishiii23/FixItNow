@@ -83,4 +83,9 @@ public class ServiceDetailsService {
 		statuses.add("APPROVED FROM SERVICE MAN");
 		return serviceDetailsRepository.findByStatusNotInAndServiceManId(statuses, serviceManId);
 	}
+	
+	public void deleteById(int serviceDetailsId) {
+		serviceDetailsRepository.deleteById(serviceDetailsId);
+		
+	}
 }

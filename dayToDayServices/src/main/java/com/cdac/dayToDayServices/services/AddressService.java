@@ -44,4 +44,12 @@ public class AddressService {
 		return null;
 	}
 
+	public List<Address> getAllAddresses() {
+		return addressRepository.findAll();
+	}
+
+	public void deleteById(int addressId) {
+		addressRepository.deleteById(addressId);
+		
+	}
 }

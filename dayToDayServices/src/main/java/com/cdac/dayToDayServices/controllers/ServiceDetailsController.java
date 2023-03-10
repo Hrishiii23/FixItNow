@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -83,4 +84,12 @@ public class ServiceDetailsController {
 	public ResponseEntity getAll() {
 		return Response.success(service.getAllServiceDetails());
 	}
+	
+	@DeleteMapping("/delete/{serviceDetailsId}")
+	public ResponseEntity deleteUser(@PathVariable int serviceDetailsId) {
+		service.deleteById(serviceDetailsId);
+		return Response.success("Delete service details called successfully !!!");
+	}
+	
+	
 }

@@ -24,15 +24,22 @@ public class UserService {
 
 	public User updatePassword(ChangePasswordRequest passwordRequest) {
 		User user = repository.findById(passwordRequest.getUserId()).orElse(null);
-		if(user!=null && user.getPassword().equals(passwordRequest.getOldPassword())) {
+		if (user != null && user.getPassword().equals(passwordRequest.getOldPassword())) {
 			user.setPassword(passwordRequest.getNewPassword());
 			return repository.save(user);
-		}
-		else
+		} else
 			return null;
 	}
 
 	public List<User> addAll(List<User> users) {
 		return repository.saveAll(users);
+	}
+
+	public List<User> getAll(){
+		return repository.findAll();
+	}
+	
+	public void deleteById(int userId) {
+		 repository.deleteById(userId);
 	}
 }

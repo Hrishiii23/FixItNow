@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -71,6 +72,7 @@ public class ServiceManController {
 			return Response.success(list);
 		}
 	}
+	
 
 	@PostMapping("/addAll")
 	public ResponseEntity addServiceMan(@RequestBody List<ServiceManRequest> serviceManRequests) {
@@ -79,5 +81,11 @@ public class ServiceManController {
 			return Response.success(serviceMans);
 		else
 			return Response.error("Service Mans not added");
+	}
+
+	@DeleteMapping("/delete/{serviceManId}")
+	public ResponseEntity deleteUser(@PathVariable int serviceManId) {
+		service.deleteById(serviceManId);
+		return Response.success("Delete service man called successfully !!!");
 	}
 }
